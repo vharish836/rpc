@@ -36,12 +36,12 @@ type clientResponse struct {
 }
 
 // EncodeClientRequest encodes parameters for a JSON-RPC client request.
-func EncodeClientRequest(method string, args interface{}) ([]byte, error) {
+func EncodeClientRequest(method string, args []interface{}) ([]byte, error) {
 	var c *clientRequest
 	if args != nil {
 		c = &clientRequest{
 			Method: method,
-			Params: []interface{}{args},
+			Params: args,
 			Id:     uint64(rand.Int63()),
 		}
 	} else {
