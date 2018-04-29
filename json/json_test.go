@@ -58,7 +58,7 @@ func execute(t *testing.T, s *rpc.Server, method string, req, res interface{}) e
 		t.Fatal("Expected to be registered:", method)
 	}
 
-	buf, _ := EncodeClientRequest(method, req)
+	buf, _ := EncodeClientRequest(method, []interface{}{req})
 	body := bytes.NewBuffer(buf)
 	r, _ := http.NewRequest("POST", "http://localhost:8080/", body)
 	r.Header.Set("Content-Type", "application/json")

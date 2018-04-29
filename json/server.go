@@ -13,7 +13,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/gorilla/rpc"
+	"github.com/vharish836/rpc"
 )
 
 var null = json.RawMessage([]byte("null"))
@@ -99,6 +99,10 @@ func (c *CodecRequest) ReadRequest(args interface{}) error {
 			// JSON params is array value. RPC params is struct.
 			// Unmarshal into array containing the request struct.
 			params := reflect.ValueOf(args).Elem()
+			if params.Kind() != reflect.Struct {
+				str := fmt.Sprintf("Expected request params to be Struct, got %s", params.Kind())
+				return errors.New(str)
+			}
 			rt := params.Type()
 			numParams := len(c.request.Params)
 			numFields := params.NumField()
