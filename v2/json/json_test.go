@@ -14,7 +14,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/vharish836/rpc/v2"
+	"github.com/gorilla/rpc/v2"
 )
 
 var (

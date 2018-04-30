@@ -4,14 +4,14 @@
 // license that can be found in the LICENSE file.
 
 /*
-Package vharish836/rpc/protorpc provides a codec for ProtoRPC over HTTP services.
+Package gorilla/rpc/protorpc provides a codec for ProtoRPC over HTTP services.
 
 To register the codec in a RPC server:
 
 	import (
 		"http"
-		"github.com/vharish836/rpc/v2"
-		"github.com/vharish836/rpc/v2/protorpc"
+		"github.com/gorilla/rpc/v2"
+		"github.com/gorilla/rpc/v2/protorpc"
 	)
 
 	func init() {
@@ -41,7 +41,7 @@ Response:
   "responseField2": "value2",
 }
 
-Check the vharish836/rpc documentation for more details:
+Check the gorilla/rpc documentation for more details:
 
 	http://gorilla-web.appspot.com/pkg/rpc
 */

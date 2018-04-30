@@ -4,14 +4,14 @@
 // license that can be found in the LICENSE file.
 
 /*
-Package vharish836/rpc/json provides a codec for JSON-RPC over HTTP services.
+Package gorilla/rpc/json provides a codec for JSON-RPC over HTTP services.
 
 To register the codec in a RPC server:
 
 	import (
 		"http"
-		"github.com/vharish836/rpc"
-		"github.com/vharish836/rpc/json"
+		"github.com/gorilla/rpc"
+		"github.com/gorilla/rpc/json"
 	)
 
 	func init() {
@@ -51,7 +51,7 @@ Response format is:
 	id:
 		The same id as the request it is responding to.
 
-Check the vharish836/rpc documentation for more details:
+Check the gorilla/rpc documentation for more details:
 
 	http://gorilla-web.appspot.com/pkg/rpc
 */
